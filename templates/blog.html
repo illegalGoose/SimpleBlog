@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 253 Blog</title>
+
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        .subject{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .blog{
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        hr{
+            margin-right: 20%;
+            height: 2px;
+            background-color: black;
+        }
+        .post{
+            margin-left: 20%;
+        }
+        .date{
+            text-align: right;
+            margin-right: 20%;
+            margin-top: -20px;
+            color: grey;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>CS 253 Blog</h1>
+
+    <br>
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="subject">{{ post.subject }}</div>
+            <div class="date">{{ post.created.date().strftime("%b %d, %Y") }}</div>
+            <hr>
+            <pre class="blog">{{ post.content }}</pre>
+        </div>
+    {% endfor %}
+
+</body>
+</html>
