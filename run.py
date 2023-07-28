@@ -1,5 +1,3 @@
-from index.py import main_page, permalink, new_post
+from myapp import main_page, permalink, new_post
 
-app = new_post()
-app = permalink()
-app = main_page()
+app = new_post(), permalink(), main_page()
