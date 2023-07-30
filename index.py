@@ -6,7 +6,6 @@ import jinja2
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-# postgres://prettyprinted_render_example_rywg_user:HXPz0klfGa8Nk0afze0ixiqmlwoW1gxL@dpg-cj23hrc07spkp630flog-a.oregon-postgres.render.com/prettyprinted_render_example_rywg
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 db = SQLAlchemy(app)
 
