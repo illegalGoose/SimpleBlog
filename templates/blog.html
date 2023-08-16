@@ -10,6 +10,19 @@
             display: flex;
             justify-content: center;
         }
+
+        h3{
+            display: flex;
+            justify-content: right;
+            margin-right: 20%;
+            margin-top: -45px;
+        }
+
+        a{
+            color: black;
+            text-decoration: none;
+        }
+
         .subject{
             font-weight: bold;
             font-size: 20px;
@@ -37,13 +50,15 @@
 </head>
 <body>
 
-    <h1>CS 253 Blog</h1>
+    <a href="/blog"><h1>CS 253 Blog</h1></a>
+
+    <a href="/blog/newpost"><h3>+ Add New Post</h3></a>
 
     <br>
 
     {% for post in posts %}
         <div class="post">
-            <div class="subject">{{ post.subject }}</div>
+            <div class="subject"><a href="{{'/blog/' ~ post.id }}">{{ post.subject }}</a></div>
             <div class="date">{{ post.created.date().strftime("%b %d, %Y") }}</div>
             <hr>
             <pre class="blog">{{ post.content }}</pre>
