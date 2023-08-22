@@ -18,6 +18,10 @@ class Post(db.Model):
     content = db.Column(db.Text, unique = True)
     created = db.Column(db.DateTime, default = datetime.utcnow)
 
+@app.route("/")
+def redirecting():
+    return redirect("/blog")
+
 @app.route("/blog")  
 def main_page():
     t = jinja_env.get_template("blog.html")
